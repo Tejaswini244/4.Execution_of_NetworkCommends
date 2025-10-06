@@ -25,63 +25,18 @@ This commands includes
 <BR>
 • Other IP Commands e.g. show ip route etc.
 <BR>
-## PROGRAM
 
-CLIENT
+## OUTPUT
 
-import socket 
+<img width="1052" height="954" alt="Screenshot 2025-10-06 103730" src="https://github.com/user-attachments/assets/6ccb8323-c1a6-42b7-b9ce-b3b6129c422b" />
 
-from pythonping import ping 
+<img width="1009" height="913" alt="Screenshot 2025-10-06 103801" src="https://github.com/user-attachments/assets/5db79656-bae8-4646-b65f-c179c3ce2358" />
 
-s=socket.socket() 
+<img width="899" height="396" alt="Screenshot 2025-10-06 103825" src="https://github.com/user-attachments/assets/c3de8f5b-62aa-4738-bcae-c22150b10a25" />
 
-s.bind(('localhost'8000)) 
+<img width="970" height="865" alt="Screenshot 2025-10-06 104027" src="https://github.com/user-attachments/assets/d9515c4e-3941-4f8e-990b-14c7934a28ed" />
 
-s.listen(5) 
-
-c,addr=s.accept() 
-
-while True: 
-
-    hostname=c.recv(1024).decode() 
-    
-    try: 
-    
-        c.send(str(ping(hostname, verbose=False)).encode()) 
-        
-    except KeyError: 
-    
-        c.send("Not Found".encode())
-
-SERVER
-
-import socket 
-
-s=socket.socket() 
-
-s.connect(('localhost',8000)) 
-
-while True: 
-
-   ip=input("Enter the website you want to ping ") 
-   
-   s.send(ip.encode()) 
-   
-   print(s.recv(1024).decode())
-   
-TRACEROUTE
-
-   from scapy.all import* 
-   
-target = ["www.google.com"] 
-
-result, unans = traceroute(target,maxttl=32) 
-
-print(result,unans)
-
-## Output
-
-<img width="1269" height="737" alt="Screenshot 2025-09-29 104346" src="https://github.com/user-attachments/assets/fc000b11-75ae-4204-a666-8646e0800464" />
+<img width="522" height="261" alt="Screenshot 2025-10-06 104046" src="https://github.com/user-attachments/assets/1fcd55e9-2afe-4852-a09b-fe27cb66873d" />
 
 ## Result
 Thus Execution of Network commands Performed 
